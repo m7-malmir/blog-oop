@@ -1,7 +1,6 @@
 <?php
-
-require 'config/database.php';
-
+require 'classes/dbh.classes.php';
+require 'classes/constants.php';
 //fetch current user avatar from database
 if(isset($_SESSION['user_id'])){
     $id=filter_var($_SESSION['user_id'],FILTER_SANITIZE_NUMBER_INT);
@@ -10,7 +9,6 @@ if(isset($_SESSION['user_id'])){
     $avatar=mysqli_fetch_assoc($res);
 }
 ?>
-
 <!DOCTYPE php>
 <html lang="en">
 <head>
@@ -48,5 +46,4 @@ if(isset($_SESSION['user_id'])){
           <button id="open-menu-btn"><i class="uil uil-bars"></i></btn>
           <button id="close-menu-btn"><i class="uil uil-multiply"></i></btn>
     </div>
-
 </nav><!--end of nav-->
