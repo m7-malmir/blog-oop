@@ -1,7 +1,7 @@
 <?php
 
 require 'config/database.php';
-include_once 'config/constants.php';
+
 //fetch current user avatar from database
 if(isset($_SESSION['user_id'])){
     $id=filter_var($_SESSION['user_id'],FILTER_SANITIZE_NUMBER_INT);
