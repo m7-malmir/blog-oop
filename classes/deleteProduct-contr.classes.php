@@ -1,5 +1,10 @@
 <?php
-require_once 'dbh.classes.php';
-class Product extends Dbh{
-    
-}    
+
+class DeleteProductContr extends DeleteProduct{
+    public function __construct(){
+        //todo
+    }
+    public function showProduct(){
+        return $this->getProductInfo();
+    }
+}
