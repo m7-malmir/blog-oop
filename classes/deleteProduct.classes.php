@@ -1,6 +1,7 @@
 <?php
 require_once 'dbh.classes.php';
 class DeleteProduct extends Dbh{
-   //todo
+   $query="delete from tablename where id=?";
+   
     }
 }    
