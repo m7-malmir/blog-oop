@@ -2,12 +2,12 @@
 require 'classes/dbh.classes.php';
 require 'classes/constants.php';
 //fetch current user avatar from database
-if(isset($_SESSION['user_id'])){
-    $id=filter_var($_SESSION['user_id'],FILTER_SANITIZE_NUMBER_INT);
+/*if(isset($_SESSION['user_id'])){
+$id=filter_var($_SESSION['user_id'],FILTER_SANITIZE_NUMBER_INT);
     $query="select avatar from users where id=$id";
     $res=mysqli_query($mysqli,$query);
     $avatar=mysqli_fetch_assoc($res);
-}
+}*/
 ?>
 <!DOCTYPE php>
 <html lang="en">
@@ -39,7 +39,7 @@ if(isset($_SESSION['user_id'])){
                     <li><a href="<?= ROOT_URL ?>logout.php">Log Out</a></li>
                 </ul>  
             </li>
-                <?php else : ?>
+                <?php //else : ?>
             <li><a href="<?= ROOT_URL ?>signin.php"><h4>Sign in</h4></a></li>
            <?php endif ?>
           </ul>
