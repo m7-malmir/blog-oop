@@ -1,7 +1,12 @@
 <?php
 require_once 'dbh.classes.php';
 class DeleteProduct extends Dbh{
-   $query="delete from tablename where id=?";
    
+    public function deleteProduct(){
+        $query="delete from tablename where id=?";
     }
-}    
+   
+
+
+}
+   
