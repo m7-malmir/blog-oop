@@ -1,12 +1,9 @@
 <?php
 include 'partials/header.php';
-// $f_query="SELECT * FROM `posts` WHERE `is_featured`=1";
-// $f_result=mysqli_query($mysqli,$f_query);
-// $featured=mysqli_fetch_assoc($f_result);
+include 'classes/showProduct-contr.classes.php';
 
-
-// $post_q="SELECT * FROM `posts` ORDER BY `date_time` LIMIT 6";
-// $r_post=mysqli_query($mysqli,$post_q);
+$newShow=new ShowProductContr;
+$posts=$newShow->showProduct();
 ?>
 <?php //if(mysqli_num_rows($f_result)==1) :?>
 <header>
