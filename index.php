@@ -3,14 +3,15 @@ include 'partials/header.php';
 include 'classes/showProduct-contr.classes.php';
 
 $newShow=new ShowProductContr;
-$posts=$newShow->showProduct();
+$post=$newShow->showProduct();
+// print_r($post['title']);
 ?>
 <?php //if(mysqli_num_rows($f_result)==1) :?>
 <header>
     <div class="container header__container">
         <div class="header__right">
             <div class="header__right-image">
-                <img src="./img/<?= $featured['thumbnail'] ?>" alt="">
+                <img src="./img/" alt="">
             </div><!--header__right-image-->
         </div><!--header__right-->
 
@@ -23,7 +24,7 @@ $posts=$newShow->showProduct();
               // $category=mysqli_fetch_assoc($c_result);
               // $cat_title=$category['title'];
               ?>
-                <a href="<?php //ROOT_URL ?>category-posts.php?id=<?= $featured['category_id'] ?>" class=""><?php //$cat_title ?></a>
+                <a href="<?php //ROOT_URL ?>" class=""><?php //$cat_title ?></a>
             </div>
               <a href="<?php //ROOT_URL ?>post.php?id=<?php //$featured['id'] ?>">
                 <h4><?php //$featured['title'] ?></h4>
@@ -56,11 +57,11 @@ $posts=$newShow->showProduct();
 </header><!--end of header-->
 <?php //endif ?>
 <section class="container content__container">
-<?php //while($post = mysqli_fetch_assoc($r_post)) : ?>
+<?php   foreach($post as $key=>$val) : ?>
     <div class="other_posts">
 
         <div class="header__right-image">
-            <img src="./img/<?= $post['thumbnail'] ?>" alt="">
+            <img src="./img/<?= $val['thumbnail'] ?>" alt="">
         </div><!--header__right-image-->
         <?php
               // $category_id=$post['category_id'];
@@ -72,10 +73,10 @@ $posts=$newShow->showProduct();
           <div class="category__title">
             <a href="category-posts.php?id=<?php //$post['category_id'] ?>" class=""><?php //$cat_title ?></a>
         </div>
-        <a href="<?php //ROOT_URL ?>post.php?id=<?php //$post['id'] ?>">
-        <h4><?php //$post['title'] ?></h4>
+        <a href="<?php ROOT_URL ?>post.php?id=<?php echo $val['id']; ?>">
+        <h4><?php echo $val['title']; ?></h4>
         <p class="text-muted">
-        <?php  //substr($post['body'], 0,150)  ?>...
+        <?php  substr($val['body'], 0,150)  ?>...
         </p>
         </a>
         <?php
@@ -100,7 +101,7 @@ $posts=$newShow->showProduct();
 
     </div><!--other_posts-->
 
-<?php //endwhile ?>
+<?php endforeach; ?>
 </section><!--container content__container-->
 
 
