@@ -1,7 +1,6 @@
 <?php
 include 'partials/header.php';
 include 'classes/showProduct-contr.classes.php';
-
 $newShow=new ShowProductContr;
 $post=$newShow->showProduct();
 // print_r($post['title']);
@@ -14,7 +13,6 @@ $post=$newShow->showProduct();
                 <img src="./img/" alt="">
             </div><!--header__right-image-->
         </div><!--header__right-->
-
         <div class="header__left">
             <div class="category__title">
               <?php
@@ -61,7 +59,7 @@ $post=$newShow->showProduct();
     <div class="other_posts">
 
         <div class="header__right-image">
-            <img src="./img/<?= $val['thumbnail'] ?>" alt="">
+            <img src="<?php ROOT_URL ?>./img/<?= $val['thumbnail'] ?>" alt="">
         </div><!--header__right-image-->
         <?php
               // $category_id=$post['category_id'];
@@ -69,7 +67,7 @@ $post=$newShow->showProduct();
               // $c_result=mysqli_query($mysqli, $category_q);
               // $category=mysqli_fetch_assoc($c_result);
               // $cat_title=$category['title'];
-              ?>
+          ?>
           <div class="category__title">
             <a href="category-posts.php?id=<?php //$post['category_id'] ?>" class=""><?php //$cat_title ?></a>
         </div>
@@ -96,15 +94,10 @@ $post=$newShow->showProduct();
                   <h5>By: <?php //"{$f_name} {$l_name}" ?></h5>
                   <small><?php //date("M d, Y - H:i",strtotime($post['date_time'])) ?></small>
             </div>
-          
           </div>
-
     </div><!--other_posts-->
-
 <?php endforeach; ?>
 </section><!--container content__container-->
-
-
 <?php
 include('partials/footer.php');
 ?>
